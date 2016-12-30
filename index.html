@@ -24,7 +24,7 @@
 
         <form>
             <label>Student ID#:<span id="studentIdError" class="hidden"> Check Student ID</span><br>
-                <input id="studentId" type="text" placeholder="@00XXXXXX" onblur="checkStudentId()" onkeyup="studentIdKeytest()"  >
+                <input id="studentId" type="text" placeholder="@00XXXXXX" maxlength="9"  onblur="checkStudentId()" onkeyup="studentIdKeytest()"  >
             </label>
             <label>Course:<br>
                 <select>
@@ -52,19 +52,29 @@
                 </select>
             </label>
             <label>Attempt ID#:<span id="attemptIdError" class="hidden"></span> <br>
-                <input id="attemptId" type="text" placeholder="1234567890" onblur="checkAttemptId()">
+                <input id="attemptId" type="text" placeholder="1234567890" size="10" maxlength="10"  onkeyup="attemptIdKeytest()"  onblur="checkAttemptId()">
             </label>
-            <label>Percent Correct:<br>
-                <input type="text" placeholder="" size="3">&nbsp;%
+
+
+
+            <label>Percent Correct:<span id="percentCorrectError" class="hidden"></span> <br>
+                <input id="percentCorrect" type="text" placeholder="0-100" size="3"  maxlength="3"  onblur="checkPercentCorrect()" onkeyup="percentCorrectKeytest()">&nbsp;%
             </label>
-            <label>Answer Responses:<br>
-                <input class="answer-input" type="text" placeholder="abcde" size="5">&nbsp;-&nbsp;
-                <input class="answer-input" type="text" placeholder="abcde" size="5">&nbsp;-&nbsp;
-                <input class="answer-input" type="text" placeholder="abcde" size="5">&nbsp;-&nbsp;
-                <input class="answer-input" type="text" placeholder="abcde" size="5">&nbsp;-&nbsp;
-                <input class="answer-input" type="text" placeholder="abcde" size="5">&nbsp;-&nbsp;
-                <input class="answer-input" type="text" placeholder="abcde" size="5">
+
+
+            <label id="answerResponseBlocks">Answer Responses:<span id="answerInputError" class="hidden"></span> <br>
+                <input class="answer-input" type="text" placeholder="abcde" size="5" pattern=".{5}" maxlength="5" onkeyup="answerResponseKeytest()">&nbsp;-&nbsp;
+                <input class="answer-input" type="text" placeholder="abcde" size="5" pattern=".{5}" maxlength="5" onkeyup="answerResponseKeytest()">&nbsp;-&nbsp;
+                <input class="answer-input" type="text" placeholder="abcde" size="5" pattern=".{5}" maxlength="5" onkeyup="answerResponseKeytest()">&nbsp;-&nbsp;
+                <input class="answer-input" type="text" placeholder="abcde" size="5" pattern=".{5}" maxlength="5" onkeyup="answerResponseKeytest()">&nbsp;-&nbsp;
+                <input class="answer-input" type="text" placeholder="abcde" size="3" pattern=".{3}" maxlength="5" onblur="checkAnswerResponse()" onkeyup="answerResponseKeytest()">
             </label>
+
+
+
+
+
+
             <label>Received Date:<br>
                 <input class="answer-input" type="date" placeholder="mm" size="2">&nbsp;&nbsp;/&nbsp;
                 <input class="answer-input" type="date" placeholder="dd" size="2">&nbsp;&nbsp;/&nbsp;
@@ -72,6 +82,25 @@
             </label>
             <input type="submit" value="Submit Attempt"></submit>
         </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <form>
             <label>Submission Barcode:<span id="studentIdError" class="hidden"> Check Student ID</span><br>
