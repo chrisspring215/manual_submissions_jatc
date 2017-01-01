@@ -24,16 +24,18 @@
 
         <form>
             <label>Student ID#:<span id="studentIdError" class="hidden"> Check Student ID</span><br>
-                <input id="studentId" type="text" placeholder="@00XXXXXX" maxlength="9"  onblur="checkStudentId()" onkeyup="studentIdKeytest()"  >
+                <input id="studentId" type="text" placeholder="@00XXXXXX" maxlength="9" onblur="checkStudentId()" onkeyup="studentIdKeytest()"  >
             </label>
-            <label>Course:<br>
-                <select>
+
+            <label>Course:<span id="courseError" class="hidden"> Choose a course</span><br>
+                <select id="courseChoice" onblur="checkStudentId()">
                     <option selected disabled>Choose One</option>
                     <option>SPF01D</option>
                     <option>SPF02D</option>
                     <option>SPF03D</option>
                 </select>
             </label>
+
             <label>Submission Type:<br>
                 <select>
                     <option selected disabled>Choose One</option>
