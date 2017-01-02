@@ -27,8 +27,13 @@
                 <input id="studentId" type="text" placeholder="@00XXXXXX" maxlength="9" onblur="checkStudentId()" onkeyup="studentIdKeytest()"  >
             </label>
 
+
+
+
+
+
             <label>Course:<span id="courseError" class="hidden"> Choose a course</span><br>
-                <select id="courseChoice" onblur="checkStudentId()">
+                <select id="courseChoice" onblur="checkCourse()">
                     <option selected disabled>Choose One</option>
                     <option>SPF01D</option>
                     <option>SPF02D</option>
@@ -36,16 +41,27 @@
                 </select>
             </label>
 
-            <label>Submission Type:<br>
-                <select>
+
+
+
+
+
+
+
+            <label>Submission Type:<span id="submissionError" class="hidden"> Choose a submission type</span><br>
+                <select id="submissionChoice" onblur="checkSubmissionType()">
                     <option selected disabled>Choose One</option>
                     <option>Lessons</option>
                     <option>Final</option>
                 </select>
             </label>  
-            <label>Lesson:<br>
-                <select>
-                    <option disabled>Choose One</option>
+
+
+
+
+            <label>Lesson:<span id="lessonError" class="hidden"> Choose a lesson</span><br>
+                <select id="lessonChoice" onblur="checkLesson()">
+                    <option selected disabled>Choose One</option>
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
@@ -53,6 +69,11 @@
                     <option>05</option>
                 </select>
             </label>
+
+
+
+
+
             <label>Attempt ID#:<span id="attemptIdError" class="hidden"></span> <br>
                 <input id="attemptId" type="text" placeholder="1234567890" size="10" maxlength="10"  onkeyup="attemptIdKeytest()"  onblur="checkAttemptId()">
             </label>
@@ -77,10 +98,15 @@
 
 
 
-            <label>Received Date:<br>
-                <input class="answer-input" type="date" placeholder="mm" size="2">&nbsp;&nbsp;/&nbsp;
-                <input class="answer-input" type="date" placeholder="dd" size="2">&nbsp;&nbsp;/&nbsp;
-                <input class="answer-input" type="date" placeholder="yyy" size="4">
+            <label>Received Date:<span id="submissionDateError" class="hidden"></span> <br>
+
+                <input id="month" class="answer-input" type="date" name="month" placeholder="mm" size="2" onkeyup="dateKeyTest()">&nbsp;&nbsp;/&nbsp;
+
+                <input id="day" class="answer-input" type="date" name="day" placeholder="dd" size="2" onkeyup="dateKeyTest()">&nbsp;&nbsp;/&nbsp;
+
+                <input id="year" class="answer-input" type="date" name="year" placeholder="yyyy" size="4" onkeyup="dateKeyTest()">
+            
+
             </label>
             <input type="submit" value="Submit Attempt"></submit>
         </form>
